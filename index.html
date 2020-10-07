@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Project.css">
+</head>
+<body>
+    <div class="box">
+        
+        <div class="tentruong">
+            <h4 class="truong bachkhoa tolen ">Bách Khoa</h4>
+            <h4 class="truong congnghiep ">Công Nghiệp</h4>
+        </div>
+
+        <div class="hust">
+            <img src="https://ctt-sis.hust.edu.vn/Content/Anh/anh_20194754.jpg" alt="     Thằng này chưa đăng ảnh lên" class="hainguyenduc" style="color: white;">
+            <!-- <iframe class="hainguyen"
+                style="height: 1000px; width: 1000px; transform: scale(0.4);" 
+                src="" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe> -->
+            <input type="text" placeholder="           Nhập MSSV" class="nhap"> 
+            <a class="load">
+                <p class="chuloadanh">Load Ảnh</p>
+            </a>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+
+        var hainguyen;
+		document.querySelector('input').onblur=function(e){
+            hainguyen=e.target.value;
+            document.querySelector('a').onclick=function(e){
+                document.querySelector('img').src='https://ctt-sis.hust.edu.vn/Content/Anh/anh_'+hainguyen+'.jpg';
+                document.querySelector('img').style.display='block';
+            }                
+        }
+
+        document.querySelector('.congnghiep').onclick=function(e){
+                document.querySelector('.congnghiep').classList.add('tolen');
+                document.querySelector('.bachkhoa').classList.remove('tolen');
+                document.querySelector('.box').style.backgroundImage = 'url(./HaUI.jpg)';
+        }
+        document.querySelector('.bachkhoa').onclick=function(e){
+            document.querySelector('.bachkhoa').classList.add('tolen');
+            document.querySelector('.congnghiep').classList.remove('tolen');
+            document.querySelector('.box').style.backgroundImage = 'url(./HUST.jpg)';
+        }  
+
+    </script>
+</body>
+</html>
